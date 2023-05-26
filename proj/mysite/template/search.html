@@ -1,0 +1,23 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>Search Form</title>  
+
+</head>  
+<body>   
+	<form method="GET" action="{% url 'search' %}">
+        <input type="text" name="q" placeholder="Search...">
+        <input type="submit" value="Search">
+    </form>
+    
+    {% if results %}
+        <ul>
+        {% for product in results %}
+            <li>{{ product.name }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    
+</body>  
+</html>
